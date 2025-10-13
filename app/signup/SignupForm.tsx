@@ -27,10 +27,11 @@ export default function SignupForm() {
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     if (token) {
-      // User is already signed up, redirect to onboarding
-      router.push('/onboarding');
+      // User is already signed up, redirect to appropriate onboarding
+      const redirectPath = role === 'recruiter' ? '/recruiter-onboarding' : '/onboarding';
+      router.push(redirectPath);
     }
-  }, [router]);
+  }, [router, role]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -105,8 +106,9 @@ export default function SignupForm() {
         }
         // Clear any existing errors
         setErrors({});
-        // Navigate to onboarding page immediately
-        router.push(`/onboarding`);
+        // Navigate to appropriate onboarding page based on role
+        const redirectPath = role === 'recruiter' ? '/recruiter-onboarding' : '/onboarding';
+        router.push(redirectPath);
         return; // Exit early to prevent any further processing
       } else {
         // Handle API error

@@ -2,3 +2,156 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Brand Color Variables */
+:root {
+  /* Brand Colors */
+  --tf-primary: #4f46e5; /* Gradient TO */
+  --tf-secondary: #2563eb; /* Gradient FROM */
+  --tf-black: #0f172a; /* Rich black for text */
+  --tf-white: #ffffff; /* Backgrounds */
+  --tf-glass-bg: rgba(255, 255, 255, 0.1);
+
+  /* Text Colors */
+  --tf-text-main: var(--tf-black);
+  --tf-text-light: #475569; /* for subtle text */
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-size: 3rem;       /* 48px desktop, 36px tablet, 28px mobile */
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--tf-text-main);
+}
+
+h2 {
+  font-size: 2.25rem;    /* 36px */
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--tf-text-main);
+}
+
+h3 {
+  font-size: 1.75rem;    /* 28px */
+  font-weight: 600;
+  color: var(--tf-text-main);
+}
+
+.subtitle {
+  font-size: 1.25rem;    /* 20px */
+  font-weight: 500;
+  color: var(--tf-text-light);
+}
+
+body, p {
+  font-size: 1rem;       /* 16px */
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--tf-text-main);
+}
+
+.small {
+  font-size: 0.875rem;   /* 14px */
+  color: var(--tf-text-light);
+}
+
+/* Button Text */
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Highlight Text Style */
+.highlight {
+  background: linear-gradient(to right, var(--tf-secondary), var(--tf-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--tf-glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title Utility */
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title span {
+  background: linear-gradient(to right, var(--tf-secondary), var(--tf-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.25rem; /* 36px mobile */
+  }
+  
+  h2 {
+    font-size: 1.875rem; /* 30px mobile */
+  }
+  
+  h3 {
+    font-size: 1.5rem; /* 24px mobile */
+  }
+  
+  .subtitle {
+    font-size: 1rem; /* 16px mobile - half of desktop */
+  }
+  
+  body, p {
+    font-size: 0.875rem; /* 14px mobile - half of desktop */
+  }
+  
+  .btn {
+    font-size: 0.875rem; /* 14px mobile - half of desktop */
+  }
+  
+  .section-title {
+    font-size: 1.875rem; /* 30px mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem; /* 28px small mobile */
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* 24px small mobile */
+  }
+  
+  h3 {
+    font-size: 1.25rem; /* 20px small mobile */
+  }
+  
+  .subtitle {
+    font-size: 0.875rem; /* 14px small mobile */
+  }
+  
+  body, p {
+    font-size: 0.75rem; /* 12px small mobile */
+  }
+  
+  .btn {
+    font-size: 0.75rem; /* 12px small mobile */
+  }
+  
+  .section-title {
+    font-size: 1.5rem; /* 24px small mobile */
+  }
+}

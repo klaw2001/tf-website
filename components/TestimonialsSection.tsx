@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
                   <img 
                     src={testimonials[activeTestimonial].image}
                     alt={testimonials[activeTestimonial].name}
-                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover mr-4 border-2 border-blue-200"
+                    className="hidden sm:block w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover mr-4 border-2 border-blue-200"
                   />
                   <div className="text-left">
                     <div className="font-semibold text-gray-900 text-base sm:text-lg">
@@ -108,7 +108,7 @@ export default function TestimonialsSection() {
                 </div>
               </div>
 
-              <div className="flex justify-center">
+              <div className="hidden sm:flex justify-center">
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-3xl blur-2xl"></div>
                   <img 

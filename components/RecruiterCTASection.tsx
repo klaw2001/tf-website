@@ -1,6 +1,8 @@
 
 'use client';
 
+import Link from 'next/link';
+
 export default function RecruiterCTASection() {
   return (
     <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-50 relative overflow-hidden">
@@ -36,14 +38,20 @@ export default function RecruiterCTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12 px-4">
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-bold text-sm sm:text-lg whitespace-nowrap cursor-pointer shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+            <Link 
+              href="/signup?role=recruiter"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-bold text-sm sm:text-lg whitespace-nowrap cursor-pointer shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+            >
               <i className="ri-search-eye-line mr-2"></i>
               Start Hiring Today
-            </button>
-            <button className="border-2 border-blue-300 text-blue-600 px-6 sm:px-10 py-3 sm:py-4 rounded-full hover:bg-blue-50 transition-all duration-200 font-bold text-sm sm:text-lg whitespace-nowrap cursor-pointer backdrop-blur-sm">
+            </Link>
+            <Link 
+              href="/contact"
+              className="border-2 border-blue-300 text-blue-600 px-6 sm:px-10 py-3 sm:py-4 rounded-full hover:bg-blue-50 transition-all duration-200 font-bold text-sm sm:text-lg whitespace-nowrap cursor-pointer backdrop-blur-sm"
+            >
               <i className="ri-calendar-line mr-2"></i>
               Schedule Demo
-            </button>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto">

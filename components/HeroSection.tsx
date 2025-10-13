@@ -1,9 +1,11 @@
 
 'use client';
 
+import Link from 'next/link';
+
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50 min-h-screen flex items-center py-12 sm:py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-white min-h-screen flex items-center py-12 sm:py-16 lg:py-20">
       <div className="absolute inset-0 opacity-30">
         <div 
           className="w-full h-full"
@@ -15,34 +17,35 @@ export default function HeroSection() {
       
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16 sm:pt-20 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6" style={{ backgroundColor: '#EBF4FF', color: '#2563EB' }}>
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 bg-tf-secondary/10 text-tf-secondary">
             <i className="ri-sparkle-2-line mr-2"></i>
             Experience-First Hiring Platform
           </div>
           
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 leading-tight mb-6 sm:mb-8">
-            Transform your
-            <br />
-            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              talent acquisition
-            </span>
-            <br />
-            with AI
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-tf-black leading-tight mb-6 sm:mb-8 capitalize">
+            Stop <span className="highlight">applying</span>.<br />
+            Start getting <span className="highlight">invited</span>.
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto px-2">
+          <p className="subtitle mb-8 sm:mb-12 leading-relaxed max-w-3xl mx-auto px-2">
             Skip the traditional job application process. Our AI-powered platform connects experienced professionals directly with opportunities based on their skills and career aspirations.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16 justify-center px-4">
-            <button className="text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full transition-all duration-200 font-semibold text-sm sm:text-lg whitespace-nowrap cursor-pointer shadow-xl hover:shadow-2xl transform hover:-translate-y-1" style={{ background: 'linear-gradient(135deg, #2563EB 0%, #3B82F6 100%)' }}>
+          <div className="flex flex-row gap-2 sm:gap-4 mb-12 sm:mb-16 justify-center px-4">
+            <Link 
+              href="/signup?role=talent"
+              className="btn text-white px-5 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-200 whitespace-nowrap cursor-pointer shadow-xl hover:shadow-2xl transform hover:-translate-y-1 bg-tf-gradient"
+            >
               <i className="ri-rocket-line mr-2"></i>
               Get Started Free
-            </button>
-            <button className="border-2 border-gray-300 text-gray-700 px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:bg-gray-50 transition-all duration-200 font-semibold text-sm sm:text-lg whitespace-nowrap cursor-pointer">
+            </Link>
+            <Link 
+              href="#demo"
+              className="btn border-2 border-tf-secondary text-tf-secondary px-5 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-tf-secondary/5 transition-all duration-200 whitespace-nowrap cursor-pointer"
+            >
               <i className="ri-play-circle-line mr-2"></i>
               Watch Demo
-            </button>
+            </Link>
           </div>
         </div>
         
@@ -217,17 +220,17 @@ export default function HeroSection() {
           <div className="absolute -bottom-8 -left-8 w-40 h-40 bg-gradient-to-r from-blue-300/20 to-indigo-300/20 rounded-full blur-2xl hidden lg:block"></div>
         </div>
         
-        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-center sm:space-x-8 space-y-2 sm:space-y-0 text-xs sm:text-sm text-gray-500">
+        <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-center sm:space-x-8 space-y-2 sm:space-y-0 text-xs sm:text-sm text-tf-text-light">
           <div className="flex items-center justify-center">
-            <i className="ri-check-line text-green-500 mr-2"></i>
+            <i className="ri-check-line text-tf-secondary mr-2"></i>
             No applications needed
           </div>
           <div className="flex items-center justify-center">
-            <i className="ri-check-line text-green-500 mr-2"></i>
+            <i className="ri-check-line text-tf-secondary mr-2"></i>
             AI-powered matching
           </div>
           <div className="flex items-center justify-center">
-            <i className="ri-check-line text-green-500 mr-2"></i>
+            <i className="ri-check-line text-tf-secondary mr-2"></i>
             Direct invitations
           </div>
         </div>

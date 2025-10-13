@@ -48,6 +48,24 @@ interface UploadResponse {
   profileId: number;
 }
 
+interface CompanyProfileRequest {
+  rc_name: string;
+  rc_website?: string;
+  rc_industry: string;
+  rc_size: string;
+  rc_role: string;
+  rc_description?: string;
+}
+
+interface IndividualProfileRequest {
+  ri_full_name: string;
+  ri_email: string;
+  ri_mobile?: string;
+  ri_linkedin_url?: string;
+  ri_portfolio?: string;
+  ri_about?: string;
+}
+
 interface ResumeParseResponse {
   experience_years: number;
   ai_detected_personality_traits: string[];
@@ -78,6 +96,9 @@ interface ApiContextType {
   signup: (data: SignupRequest) => Promise<ApiResponse<SignupResponse>>;
   uploadResume: (file: File) => Promise<ApiResponse<UploadResponse>>;
   uploadProfileImage: (file: File) => Promise<ApiResponse<UploadResponse>>;
+  uploadRecruiterProfileImage: (file: File, rpType: 'company' | 'individual') => Promise<ApiResponse<UploadResponse>>;
+  createCompanyProfile: (data: CompanyProfileRequest) => Promise<ApiResponse<any>>;
+  createIndividualProfile: (data: IndividualProfileRequest) => Promise<ApiResponse<any>>;
   parseResume: () => Promise<ApiResponse<ResumeParseResponse>>;
 }
 
@@ -229,6 +250,95 @@ const uploadProfileImage = async (file: File): Promise<ApiResponse<UploadRespons
   }
 };
 
+const uploadRecruiterProfileImage = async (file: File, rpType: 'company' | 'individual'): Promise<ApiResponse<UploadResponse>> => {
+  const token = localStorage.getItem('authToken');
+  if (!token) {
+    return {
+      status: false,
+      message: 'No authentication token found',
+      error: 'User not authenticated'
+    };
+  }
+
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('rp_type', rpType);
+
+  try {
+    const response = await fetch(`${BASE_URL}/recruiter/upload/profile-image?type=profile-image`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return {
+        status: false,
+        message: data.message || 'Upload failed',
+        error: data.error || 'Upload failed',
+        data: data.data || null
+      };
+    }
+
+    return {
+      status: data.status === true || data.status === 'success',
+      message: data.message || 'Upload successful',
+      data: data.data || data
+    };
+  } catch (error) {
+    console.error('Upload error:', error);
+    return {
+      status: false,
+      message: 'Network error occurred',
+      error: error instanceof Error ? error.message : 'Unknown error'
+    };
+  }
+};
+
+const createCompanyProfile = async (data: CompanyProfileRequest): Promise<ApiResponse<any>> => {
+  const token = localStorage.getItem('authToken');
+  if (!token) {
+    return {
+      status: false,
+      message: 'No authentication token found',
+      error: 'User not authenticated'
+    };
+  }
+
+  return apiCall<any>('/recruiter/company-profile', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+};
+
+const createIndividualProfile = async (data: IndividualProfileRequest): Promise<ApiResponse<any>> => {
+  const token = localStorage.getItem('authToken');
+  if (!token) {
+    return {
+      status: false,
+      message: 'No authentication token found',
+      error: 'User not authenticated'
+    };
+  }
+
+  return apiCall<any>('/recruiter/individual-profile', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  });
+};
+
 const parseResume = async (): Promise<ApiResponse<ResumeParseResponse>> => {
   const token = localStorage.getItem('authToken');
   if (!token) {
@@ -280,6 +390,9 @@ export const ApiProvider = ({ children }: { children: ReactNode }) => {
     signup,
     uploadResume,
     uploadProfileImage,
+    uploadRecruiterProfileImage,
+    createCompanyProfile,
+    createIndividualProfile,
     parseResume,
   };
 

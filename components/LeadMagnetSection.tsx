@@ -64,7 +64,7 @@ export default function LeadMagnetSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="text-center lg:text-left order-2 lg:order-1">
+          <div className="text-center lg:text-left order-1 lg:order-1">
             <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-white/30">
               <i className="ri-download-cloud-line mr-2"></i>
               Free Career Guide
@@ -99,7 +99,7 @@ export default function LeadMagnetSection() {
             </div>
           </div>
 
-          <div className="order-1 lg:order-2">
+          <div className="order-2 lg:order-2">
             <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-2xl border border-white/20 backdrop-blur-sm max-w-md mx-auto lg:max-w-none">
               <div className="text-center mb-4 sm:mb-6">
                 <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
