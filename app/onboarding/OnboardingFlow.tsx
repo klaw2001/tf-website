@@ -10,8 +10,9 @@ export default function OnboardingFlow() {
   const router = useRouter();
   const { uploadResume, uploadProfileImage, parseResume } = useApi();
   const role = searchParams.get('role') || 'talent';
+  const initialStep = parseInt(searchParams.get('step') || '1');
   
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(initialStep);
   const [uploadedPhoto, setUploadedPhoto] = useState<File | null>(null);
   const [uploadedResume, setUploadedResume] = useState<File | null>(null);
   const [photoPreview, setPhotoPreview] = useState<string>('');

@@ -1,6 +1,8 @@
 {
-  "/onboarding/page": "app/onboarding/page.js",
-  "/recruiter-onboarding/page": "app/recruiter-onboarding/page.js",
   "/signup/page": "app/signup/page.js",
-  "/recruiters/page": "app/recruiters/page.js"
+  "/page": "app/page.js",
+  "/about/page": "app/about/page.js",
+  "/pricing/page": "app/pricing/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/faq/page": "app/faq/page.js"
 }
