@@ -1,0 +1,7 @@
+User-Agent: *
+Allow: /
+Disallow: /onboarding
+Disallow: /recruiter-onboarding
+Disallow: /signup
+
+Sitemap: https://talentflow.com/sitemap.xml

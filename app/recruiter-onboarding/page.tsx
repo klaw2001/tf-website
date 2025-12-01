@@ -1,19 +1,8 @@
 'use client';
 
-import type { Metadata } from "next";
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useApi } from '@/contexts/ApiContext';
-
-export const metadata: Metadata = {
-  title: "Recruiter Onboarding | Set Up Your AI-Powered Recruitment Profile",
-  description: "Complete your recruiter profile setup on TalentFlow. Upload your company details, set your hiring preferences, and start connecting with top talent using our AI-powered platform.",
-  keywords: ["recruiter onboarding", "recruitment profile setup", "hiring platform setup", "recruiter dashboard", "talent acquisition setup"],
-  robots: {
-    index: false,
-    follow: false,
-  },
-};
 
 interface OnboardingData {
   profileType: 'company' | 'individual' | null;
