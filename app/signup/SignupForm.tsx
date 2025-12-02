@@ -165,27 +165,24 @@ export default function SignupForm() {
 
       const data = await response.json();
       
-      if (response.ok && data.status === true) {
-        // Store the token
-        if (data.token) {
-          localStorage.setItem('authToken', data.token);
+      // Check for success - handle both boolean true and string "true", and also check response status
+      const isSuccess = response.ok && (data.status === true || data.status === 'true' || response.status === 201 || response.status === 200);
+      
+      if (isSuccess) {
+        // Clear any existing errors
+        setUploadErrors({});
+        
+        // Store the token if available
+        if (data.token || data.data?.token) {
+          localStorage.setItem('authToken', data.token || data.data.token);
         }
         
-        // Redirect to dashboard URL from environment variable
-        const dashboardUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL;
-        if (dashboardUrl) {
-          // Force navigation to dashboard
-          window.location.href = dashboardUrl;
-        } else {
-          console.error('NEXT_PUBLIC_DASHBOARD_URL is not configured');
-          // Show error if dashboard URL is not configured
-          setUploadErrors({
-            general: 'Dashboard URL not configured. Please contact support.'
-          });
-        }
+        // Immediately redirect to success page using window.location for reliable navigation
+        window.location.href = '/signup/success';
+        return; // Exit early to prevent any further processing
       } else {
         setUploadErrors({
-          general: data.message || 'Signup failed. Please check your resume and try again.'
+          general: data.message || data.error || 'Signup failed. Please check your resume and try again.'
         });
       }
     } catch (error) {

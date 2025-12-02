@@ -7,10 +7,11 @@ import { ApiProvider } from '@/contexts/ApiContext';
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isOnboardingPage = pathname === '/onboarding';
+  const isSignupPage = pathname?.startsWith('/signup');
 
   return (
     <ApiProvider>
-      {!isOnboardingPage && <Header />}
+      {!isOnboardingPage && !isSignupPage && <Header />}
       {children}
     </ApiProvider>
   );

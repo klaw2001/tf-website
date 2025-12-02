@@ -1,14 +1,6 @@
 {
-  "/robots.txt/route": "app/robots.txt/route.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/recruiter-onboarding/page": "app/recruiter-onboarding/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/about/page": "app/about/page.js",
-  "/onboarding/page": "app/onboarding/page.js",
-  "/faq/page": "app/faq/page.js",
   "/page": "app/page.js",
-  "/pricing/page": "app/pricing/page.js",
-  "/recruiters/page": "app/recruiters/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/signup/success/page": "app/signup/success/page.js",
   "/signup/page": "app/signup/page.js"
 }
