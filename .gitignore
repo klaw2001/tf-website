@@ -1,4 +1,11 @@
 node_modules
 .env.local
 
-.next
+
+# Next build output
+.next/
+out/
+
+# Env
+.env
+.env.* 
