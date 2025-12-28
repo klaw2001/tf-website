@@ -3,8 +3,8 @@ import { Suspense } from 'react';
 import SignupSuccess from './SignupSuccess';
 
 export const metadata: Metadata = {
-  title: "Success | Profile Created - TalentFlow",
-  description: "Your TalentFlow profile has been successfully created and enriched with your resume data.",
+  title: "Success | Profile Created - TalentFlip",
+  description: "Your TalentFlip profile has been successfully created and enriched with your resume data.",
   robots: {
     index: false,
     follow: false,

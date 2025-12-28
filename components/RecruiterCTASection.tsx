@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function RecruiterCTASection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-50 relative overflow-hidden">
+    <section data-aos="fade-up" className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-blue-50 via-indigo-50 to-blue-50 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <div 
           className="w-full h-full"

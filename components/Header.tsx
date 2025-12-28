@@ -52,15 +52,6 @@ export default function Header() {
               <Link href="/about" className={`hover:text-tf-secondary transition-colors cursor-pointer text-sm lg:text-base ${pathname === '/about' ? 'text-tf-secondary font-semibold' : 'text-tf-text-light'}`}>
                 About Us
               </Link>
-              <Link href="/pricing" className={`hover:text-tf-secondary transition-colors cursor-pointer text-sm lg:text-base ${pathname === '/pricing' ? 'text-tf-secondary font-semibold' : 'text-tf-text-light'}`}>
-                Pricing
-              </Link>
-              <Link href="/contact" className={`hover:text-tf-secondary transition-colors cursor-pointer text-sm lg:text-base ${pathname === '/contact' ? 'text-tf-secondary font-semibold' : 'text-tf-text-light'}`}>
-                Contact
-              </Link>
-              <Link href="/faq" className={`hover:text-tf-secondary transition-colors cursor-pointer text-sm lg:text-base ${pathname === '/faq' ? 'text-tf-secondary font-semibold' : 'text-tf-text-light'}`}>
-                FAQ
-              </Link>
             </div>
 
             <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
@@ -158,39 +149,6 @@ export default function Header() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
-              </Link>
-              <Link 
-                href="/pricing" 
-                className={`px-4 py-3 rounded-lg font-medium text-base transition-colors ${
-                  pathname === '/pricing' 
-                    ? 'text-tf-secondary bg-blue-50' 
-                    : 'text-tf-text-light hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link 
-                href="/contact" 
-                className={`px-4 py-3 rounded-lg font-medium text-base transition-colors ${
-                  pathname === '/contact' 
-                    ? 'text-tf-secondary bg-blue-50' 
-                    : 'text-tf-text-light hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <Link 
-                href="/faq" 
-                className={`px-4 py-3 rounded-lg font-medium text-base transition-colors ${
-                  pathname === '/faq' 
-                    ? 'text-tf-secondary bg-blue-50' 
-                    : 'text-tf-text-light hover:bg-gray-50'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQ
               </Link>
             </div>
           </div>

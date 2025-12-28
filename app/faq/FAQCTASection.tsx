@@ -59,7 +59,7 @@ export default function FAQCTASection() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section data-aos="fade-up" className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="text-center lg:text-left">

@@ -3,7 +3,7 @@
 
 export default function ProblemSection() {
   return (
-    <section className="py-24 bg-white">
+    <section data-aos="fade-up" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-sm font-medium mb-6">

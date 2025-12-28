@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-white min-h-screen flex items-center py-12 sm:py-16 lg:py-20">
+    <section data-aos="fade-up" className="relative overflow-hidden bg-white min-h-screen flex items-center py-12 sm:py-16 lg:py-20">
       <div className="absolute inset-0 opacity-30">
         <div 
           className="w-full h-full"

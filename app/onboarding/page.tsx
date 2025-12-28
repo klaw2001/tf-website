@@ -4,7 +4,7 @@ import OnboardingFlow from './OnboardingFlow';
 
 export const metadata: Metadata = {
   title: "Talent Onboarding | Complete Your Profile & Start Your Journey",
-  description: "Complete your TalentFlow profile to get matched with top companies. Upload your resume, set your preferences, and let our AI find the perfect career opportunities for you.",
+  description: "Complete your TalentFlip profile to get matched with top companies. Upload your resume, set your preferences, and let our AI find the perfect career opportunities for you.",
   keywords: ["talent onboarding", "profile setup", "career matching", "job search setup", "talent profile", "career opportunities"],
   robots: {
     index: false,

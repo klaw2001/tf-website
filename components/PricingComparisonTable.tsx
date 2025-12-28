@@ -148,7 +148,7 @@ export default function PricingComparisonTable() {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section data-aos="fade-up" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-sm font-medium mb-6">

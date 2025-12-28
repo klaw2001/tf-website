@@ -47,7 +47,7 @@ export default function TestimonialsSection() {
   ];
 
   return (
-    <section id="testimonials" className="py-16 sm:py-24 bg-surface">
+    <section id="testimonials" data-aos="fade-up" className="py-16 sm:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-sm font-medium mb-6">

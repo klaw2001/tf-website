@@ -3,7 +3,7 @@
 
 export default function MissionSection() {
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+    <section data-aos="fade-up" className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
       <div 
         className="absolute inset-0 opacity-20"
         style={{

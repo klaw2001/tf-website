@@ -2,6 +2,8 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/assets/tf-logo-150x40-transparent.png';
 
 export default function Footer() {
   return (
@@ -10,7 +12,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <span className="text-2xl font-bold text-white font-['Pacifico']">TalentFlow</span>
+              <Link href="/">
+                <Image 
+                  src={logo}
+                  alt="TalentFlip Logo"
+                  width={150}
+                  height={40}
+                  className="h-8 w-auto"
+                />
+              </Link>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Connecting experienced professionals with opportunities through AI-powered matching. No applications needed.
@@ -113,15 +123,12 @@ export default function Footer() {
               © 2024 TalentFlip. All rights reserved.
             </div>
             <div className="flex flex-wrap items-center space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors cursor-pointer">
                 Terms of Service
-              </a>
-              <a href="https://readdy.ai/?origin=logo" className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer">
-                Made with Readdy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

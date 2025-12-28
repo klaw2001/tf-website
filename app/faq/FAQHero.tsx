@@ -3,7 +3,7 @@
 
 export default function FAQHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-20 pt-32">
+    <section data-aos="fade-up" className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-20 pt-32">
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6" style={{ backgroundColor: '#EBF4FF', color: '#2563EB' }}>
           <i className="ri-question-line mr-2"></i>

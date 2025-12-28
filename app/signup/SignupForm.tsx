@@ -204,7 +204,7 @@ export default function SignupForm() {
           <div className="space-y-8 animate-fadeIn">
         <div className="text-center">
               <h1 className="text-3xl sm:text-4xl font-bold mb-3" style={{ color: '#0f172a' }}>
-                Join TalentFlow
+                Join TalentFlip
               </h1>
               <p className="text-base" style={{ color: '#475569' }}>
                 Choose how you want to get started

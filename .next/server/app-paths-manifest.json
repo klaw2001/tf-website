@@ -1,6 +1,9 @@
 {
+  "/pricing/page": "app/pricing/page.js",
   "/page": "app/page.js",
+  "/recruiters/page": "app/recruiters/page.js",
+  "/faq/page": "app/faq/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/signup/success/page": "app/signup/success/page.js",
-  "/signup/page": "app/signup/page.js"
+  "/contact/page": "app/contact/page.js",
+  "/about/page": "app/about/page.js"
 }

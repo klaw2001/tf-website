@@ -33,7 +33,7 @@ export default function HowItWorksSection() {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">
+    <section id="how-it-works" data-aos="fade-up" className="py-24 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-purple-700 text-sm font-medium mb-6 border border-purple-200">

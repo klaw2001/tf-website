@@ -14,41 +14,41 @@ export default function RecruiterFeaturesSection() {
       icon: 'ri-sort-desc',
       title: 'Tier classification of talent',
       description: 'Automatic tiering highlights the strongest profiles first. Speed up debriefs with consistent criteria across teams.',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'from-blue-600 to-indigo-600',
       link: 'Auto-tiering'
     },
     {
       icon: 'ri-global-line',
       title: 'Smart region targeting',
       description: 'Filter by timezone, location, and comp bands without spreadsheets. Reach talent where hiring and budgets actually align.',
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-blue-600 to-indigo-600',
       link: 'Global ready'
     },
     {
       icon: 'ri-money-dollar-circle-line',
       title: 'Pay-per-unlock or subscribe',
       description: 'Browse free, pay only when you engage with real intent. Mix-and-match unlocks, consults, or plans to control cost.',
-      color: 'from-orange-500 to-red-500',
+      color: 'from-blue-600 to-indigo-600',
       link: 'Cost control'
     },
     {
       icon: 'ri-whatsapp-line',
       title: 'WhatsApp + in-app chat',
       description: 'Meet talent where they are with seamless chat handoff. Read receipts and thread context keep decisions moving.',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-blue-600 to-indigo-600',
       link: 'Faster replies'
     },
     {
       icon: 'ri-file-text-line',
       title: 'Project & impact previews',
       description: 'Preview outcomes, artifacts and links before you unlock. Spend time only with candidates who show real impact.',
-      color: 'from-indigo-500 to-blue-500',
+      color: 'from-blue-600 to-indigo-600',
       link: 'Signal first'
     }
   ];
 
   return (
-    <section id="features" className="py-16 sm:py-24 bg-gray-50">
+    <section id="features" data-aos="fade-up" className="py-16 sm:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-sm font-medium mb-6">

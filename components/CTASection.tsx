@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function CTASection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 relative overflow-hidden bg-white">
+    <section data-aos="fade-up" className="py-12 sm:py-16 lg:py-24 relative overflow-hidden bg-white">
       <div className="absolute inset-0 opacity-30">
         <div
           className="w-full h-full"
