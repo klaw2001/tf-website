@@ -1,12 +1,15 @@
 
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 export default function TalentCRMSection() {
+  const router = useRouter();
   return (
     <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="order-2 lg:order-1 lg:pr-8">
+          <div className="order-1 lg:order-1 lg:pr-8">
             <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium mb-6 bg-blue-50 text-blue-600">
               <i className="ri-eye-line mr-2"></i>
               Your Profile View
@@ -43,13 +46,16 @@ export default function TalentCRMSection() {
               </div>
             </div>
             
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-semibold text-base sm:text-lg whitespace-nowrap cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <button 
+              onClick={() => router.push('/signup?role=talent')}
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full hover:from-blue-700 hover:to-indigo-700 transition-all duration-200 font-semibold text-base sm:text-lg whitespace-nowrap cursor-pointer shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+            >
               <i className="ri-user-add-line mr-2"></i>
               Create Your Profile
             </button>
           </div>
           
-          <div className="relative order-1 lg:order-2">
+          <div className="relative order-2 lg:order-2">
             <div className="relative bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-gray-200 overflow-hidden max-w-lg mx-auto lg:max-w-none">
               <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200">
                 <div className="flex items-center justify-between">

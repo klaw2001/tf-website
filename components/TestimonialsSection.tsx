@@ -1,11 +1,12 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 export default function TestimonialsSection() {
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
   const testimonials = [
     {
       name: 'Alex Thompson',
@@ -45,17 +46,10 @@ export default function TestimonialsSection() {
     }
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
-
   return (
     <section id="testimonials" className="py-16 sm:py-24 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-sm font-medium mb-6">
             <i className="ri-chat-quote-line mr-2"></i>
             Success Stories
@@ -70,84 +64,72 @@ export default function TestimonialsSection() {
         </div>
 
         <div className="relative">
-          <div className="bg-card rounded-3xl p-6 sm:p-8 lg:p-12 border border-border shadow-xl">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              <div className="text-center lg:text-left">
-                <div className="flex justify-center lg:justify-start mb-6">
-                  {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                    <i key={i} className="ri-star-fill text-xl sm:text-2xl text-yellow-400"></i>
-                  ))}
-                </div>
-                
-                <blockquote className="text-base sm:text-lg lg:text-xl text-gray-900 mb-8 leading-relaxed italic">
-                  "{testimonials[activeTestimonial].quote}"
-                </blockquote>
-                
-                <div className="flex items-center justify-center lg:justify-start mb-6">
-                  <img 
-                    src={testimonials[activeTestimonial].image}
-                    alt={testimonials[activeTestimonial].name}
-                    className="hidden sm:block w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover mr-4 border-2 border-blue-200"
-                  />
-                  <div className="text-left">
-                    <div className="font-semibold text-gray-900 text-base sm:text-lg">
-                      {testimonials[activeTestimonial].name}
-                    </div>
-                    <div className="text-gray-600 text-sm">
-                      {testimonials[activeTestimonial].role}
-                    </div>
-                    <div className="text-blue-600 text-sm font-medium">
-                      {testimonials[activeTestimonial].company}
+          <Swiper
+            modules={[Pagination, Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+              },
+              768: {
+                slidesPerView: 2,
+                slidesPerGroup: 2,
+              },
+              1024: {
+                slidesPerView: 3,
+                slidesPerGroup: 3,
+              },
+            }}
+            className="testimonials-swiper"
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index} className="h-auto">
+                <div className="bg-card rounded-2xl p-6 border border-border shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                  <div className="flex items-center mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <i key={i} className="ri-star-fill text-lg text-yellow-400"></i>
+                    ))}
+                  </div>
+                  
+                  <blockquote className="text-sm text-gray-900 mb-6 leading-relaxed italic flex-grow">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  
+                  <div className="flex items-center mb-4">
+                    <img 
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-3 border-2 border-blue-200"
+                    />
+                    <div className="flex-1">
+                      <div className="font-semibold text-gray-900 text-sm">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-gray-600 text-xs">
+                        {testimonial.role}
+                      </div>
+                      <div className="text-blue-600 text-xs font-medium">
+                        {testimonial.company}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-600 text-sm font-medium">
-                  <i className="ri-trophy-line mr-2"></i>
-                  {testimonials[activeTestimonial].metrics}
+                  <div className="inline-flex items-center px-3 py-1.5 bg-blue-50 rounded-full text-blue-600 text-xs font-medium w-fit">
+                    <i className="ri-trophy-line mr-1.5"></i>
+                    {testimonial.metrics}
+                  </div>
                 </div>
-              </div>
-
-              <div className="hidden sm:flex justify-center">
-                <div className="relative">
-                  <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-3xl blur-2xl"></div>
-                  <img 
-                    src={testimonials[activeTestimonial].image}
-                    alt={testimonials[activeTestimonial].name}
-                    className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 rounded-3xl object-cover border-4 border-card shadow-2xl"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex justify-center mt-8 space-x-3">
-            {testimonials.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTestimonial(index)}
-                className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
-                  index === activeTestimonial 
-                    ? 'bg-blue-600 scale-125' 
-                    : 'bg-gray-300 hover:bg-blue-400'
-                }`}
-              />
+              </SwiperSlide>
             ))}
-          </div>
-
-          <button
-            onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-blue-600 cursor-pointer transition-all duration-200 hover:shadow-xl"
-          >
-            <i className="ri-arrow-left-line text-xl"></i>
-          </button>
-          
-          <button
-            onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center text-gray-600 hover:text-blue-600 cursor-pointer transition-all duration-200 hover:shadow-xl"
-          >
-            <i className="ri-arrow-right-line text-xl"></i>
-          </button>
+          </Swiper>
         </div>
       </div>
     </section>

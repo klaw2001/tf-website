@@ -27,7 +27,7 @@ export default function HowItWorksSection() {
       number: '04',
       title: 'Choose Your Path',
       description: 'Review offers, compare opportunities, and choose the role that best fits your career goals.',
-      icon: 'ri-roadmap-line',
+      icon: 'ri-checkbox-circle-line',
       color: 'from-cyan-500 to-teal-500'
     }
   ];
@@ -54,8 +54,8 @@ export default function HowItWorksSection() {
           
           <div className="grid lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10">
+              <div key={index} className="relative flex">
+                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 relative z-10 flex flex-col w-full">
                   <div className="flex items-center justify-between mb-6">
                     <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center`}>
                       <i className={`${step.icon} text-2xl text-white`}></i>
@@ -69,7 +69,7 @@ export default function HowItWorksSection() {
                     {step.title}
                   </h3>
                   
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed flex-grow">
                     {step.description}
                   </p>
                 </div>

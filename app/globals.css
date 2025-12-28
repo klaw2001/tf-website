@@ -171,3 +171,21 @@ body, p {
     font-size: 1.5rem; /* 24px small mobile */
   }
 }
+
+/* Swiper Testimonials Styles */
+.testimonials-swiper .swiper-pagination-bullet {
+  background: #cbd5e1;
+  opacity: 1;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #2563eb;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
+}
+
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+}
